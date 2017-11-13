@@ -1,3 +1,5 @@
+/* eslint quotes: 0 */
+/* eslint no-nested-ternary: 0 */
 import color from "color";
 
 import { Platform, Dimensions, PixelRatio } from "react-native";

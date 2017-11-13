@@ -1,3 +1,5 @@
+/* eslint quotes: 0 */
+/* eslint no-nested-ternary: 0 */
 import color from "color";
 
 import { Platform, Dimensions, PixelRatio } from "react-native";
@@ -7,6 +9,11 @@ const deviceWidth = Dimensions.get("window").width;
 const platform = Platform.OS;
 const platformStyle = undefined;
 const isIphoneX = platform === "ios" && deviceHeight === 812 && deviceWidth === 375;
+
+const colors = {
+  defaultColor: "#ae263d",
+  secondaryColor: "#ffc6d0",
+};
 
 export default {
   platformStyle,
@@ -19,6 +26,7 @@ export default {
   // Badge
   badgeBg: "#ED1727",
   badgeColor: "#fff",
+  
   // New Variable
   badgePadding: platform === "ios" ? 3 : 0,
 
@@ -109,7 +117,7 @@ export default {
   cardDefaultBg: "#fff",
 
   // Color
-  brandPrimary: "#2874F0",
+  brandPrimary: colors.defaultColor,
   brandInfo: "#62B1F6",
   brandSuccess: "#5cb85c",
   brandDanger: "#d9534f",
@@ -134,11 +142,11 @@ export default {
 
   // Footer
   footerHeight: isIphoneX ? 89 : 55,
-  footerDefaultBg: "#2874F0",
+  footerDefaultBg: colors.defaultColor,
   footerPaddingBottom: isIphoneX ? 34 : 0,
 
   // FooterTab
-  tabBarTextColor: "#8bb3f4",
+  tabBarTextColor: colors.secondaryColor,
   tabBarTextSize: platform === "ios" ? 14 : 11,
   activeTab: platform === "ios" ? "#007aff" : "#fff",
   sTabBarActiveTextColor: "#007aff",
@@ -146,7 +154,7 @@ export default {
   tabActiveBgColor: platform === "ios" ? "#1569f4" : undefined,
 
   // Tab
-  tabDefaultBg: "#2874F0",
+  tabDefaultBg: colors.defaultColor,
   topTabBarTextColor: "#b3c7f9",
   topTabBarActiveTextColor: "#fff",
   topTabActiveBgColor: platform === "ios" ? "#1569f4" : undefined,
@@ -155,7 +163,7 @@ export default {
 
   // Header
   toolbarBtnColor: "#fff",
-  toolbarDefaultBg: "#2874F0",
+  toolbarDefaultBg: colors.defaultColor,
   toolbarHeight: platform === "ios" ? (isIphoneX ? 88 : 64) : 56,
   toolbarIconSize: platform === "ios" ? 20 : 22,
   toolbarSearchIconSize: platform === "ios" ? 20 : 23,
@@ -164,7 +172,7 @@ export default {
   toolbarInverseBg: "#222",
   toolbarTextColor: "#fff",
   iosStatusbar: "light-content",
-  toolbarDefaultBorder: "#2874F0",
+  toolbarDefaultBorder: colors.defaultColor,
   get statusBarColor() {
     return color(this.toolbarDefaultBg)
       .darken(0.2)
