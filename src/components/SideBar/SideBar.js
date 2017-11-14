@@ -7,7 +7,11 @@ import {
   Content,
 } from 'native-base';
 
-const routes = ['Home', 'Profile', 'Login'];
+const routes = [
+  { name: 'Home', route: 'HomeScreen' },
+  { name: 'Profile', route: 'ProfileScreen' },
+  { name: 'Login', route: 'LoginScreen' },
+];
 class SideBar extends Component {
   render() {
     return (
@@ -15,12 +19,12 @@ class SideBar extends Component {
         <Content>
           <List
             dataArray={routes}
-            renderRow={data => (
+            renderRow={({ name, route }) => (
                 <ListItem
                   button
-                  onPress={() => this.props.navigation.navigate(data)}
+                  onPress={() => this.props.navigation.navigate(route)}
                 >
-                  <Text>{data}</Text>
+                  <Text>{name}</Text>
                 </ListItem>
               )}
           />

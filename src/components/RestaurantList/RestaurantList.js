@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import {
   Text,
-  Container,
   Content,
   Button,
 } from 'native-base';
@@ -9,17 +8,15 @@ import {
 class RestaurantList extends Component {
   render() {
     return (
-      <Container>
-        <Content>
-          <Text>RestaurantList</Text>
-          <Button
-            block
-            onPress={() => this.props.navigate()}
-          >
-            <Text>Navigate</Text>
-          </Button>
-        </Content>
-      </Container>
+      <Content padder>
+        <Text>RestaurantList</Text>
+        <Button
+          block
+          onPress={() => this.props.navigation.navigate('RestaurantScreen')}
+        >
+          <Text>Navigate</Text>
+        </Button>
+      </Content>
     );
   }
 }

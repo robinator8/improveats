@@ -37,12 +37,9 @@ class HomeScreen extends Component {
   render() {
     return (
       <Container>
-        <Content padder>
-          <Text>TODO</Text>
-          <RestaurantList
-            navigate={() => this.props.navigation.navigate('RestaurantScreen')}
-          />
-        </Content>
+        <RestaurantList
+          navigation={this.props.navigation}
+        />
       </Container>
     );
   }
