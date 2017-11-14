@@ -30,7 +30,7 @@ export default class EditScreenOne extends Component {
       </Header>
     )
   });
-  
+
   render() {
     return (
       <Container>

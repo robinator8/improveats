@@ -23,7 +23,7 @@ class RestaurantView extends Component {
           </Button>
         </Left>
         <Body>
-          <Title>Restaurant View</Title>
+          <Title>Restaurant</Title>
         </Body>
         <Right />
       </Header>
@@ -33,8 +33,8 @@ class RestaurantView extends Component {
   render() {
     return (
       <Container>
-        <Content padding>
-          <Text>TODO</Text>
+        <Content padder>
+          <Text>Restaurant View</Text>
         </Content>
       </Container>
     );

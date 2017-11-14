@@ -15,13 +15,13 @@ import {
 import RestaurantList from '../../components/RestaurantList/RestaurantList';
 
 class HomeScreen extends Component {
-  renderHeader() {
-    return (
+  static navigationOptions = ({ navigation }) => ({
+    header: (
       <Header>
         <Left>
           <Button
             transparent
-            onPress={() => this.props.navigation.navigate('DrawerOpen')}
+            onPress={() => navigation.navigate('DrawerOpen')}
           >
             <Icon name='menu' />
           </Button>
@@ -31,16 +31,17 @@ class HomeScreen extends Component {
         </Body>
         <Right />
       </Header>
-    );
-  }
+    )
+  });
 
   render() {
     return (
       <Container>
-        {this.renderHeader()}
         <Content padder>
           <Text>TODO</Text>
-          <RestaurantList />
+          <RestaurantList
+            navigate={() => this.props.navigation.navigate('RestaurantScreen')}
+          />
         </Content>
       </Container>
     );

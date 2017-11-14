@@ -3,6 +3,6 @@
 // to the tabs that appear when you click on
 // a restaurant on the website.
 
-import RestaurantView from './RestaurantView';
+import RestaurantScreen from './RestaurantScreen';
 
-export default RestaurantView;
+export default RestaurantScreen;
