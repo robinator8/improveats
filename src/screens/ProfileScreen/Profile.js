@@ -14,7 +14,7 @@ import {
   Title,
   Button,
 } from 'native-base';
-import { logout } from '../actions';
+import { logout } from '../../actions';
 
 class Profile extends Component {
   static navigationOptions = ({ navigation }) => ({

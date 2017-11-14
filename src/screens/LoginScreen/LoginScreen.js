@@ -19,9 +19,9 @@ import {
   CardItem,
   StyleProvider,
 } from 'native-base';
-import getTheme from '../../native-base-theme/components';
-import commonColor from '../../native-base-theme/variables/commonColor';
-import { login, emailChanged, passwordChanged } from '../actions';
+import getTheme from '../../../native-base-theme/components';
+import commonColor from '../../../native-base-theme/variables/commonColor';
+import { login, emailChanged, passwordChanged } from '../../actions';
 
 class LoginScreen extends Component {
   state = { focusPasswordInput: false } ;

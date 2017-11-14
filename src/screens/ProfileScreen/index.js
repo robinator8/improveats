@@ -1,7 +1,7 @@
 import { StackNavigator } from 'react-navigation';
-import Profile from './Profile.js';
-import EditScreenOne from './EditScreenOne.js';
-import EditScreenTwo from './EditScreenTwo.js';
+import Profile from './Profile';
+import EditScreenOne from './EditScreenOne';
+import EditScreenTwo from './EditScreenTwo';
 
 export default StackNavigator({
   Profile: { screen: Profile },

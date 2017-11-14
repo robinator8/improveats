@@ -7,7 +7,7 @@ import {
   Content,
 } from 'native-base';
 
-const routes = ['Home', 'Chat', 'Profile', 'Login'];
+const routes = ['Home', 'Profile', 'Login'];
 class SideBar extends Component {
   render() {
     return (
