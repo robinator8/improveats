@@ -10,7 +10,7 @@ class ListItem extends Component {
     return (
       <Card>
         <CardItem>
-          <Text>{this.props.name}</Text>
+          <Text>{this.props.restaurant.name}</Text>
         </CardItem>
       </Card>
     );

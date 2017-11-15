@@ -1,5 +1,3 @@
-// TODO, Implement ListItem, add bottom padding to content
-
 import React, { Component } from 'react';
 import { FlatList } from 'react-native';
 import { connect } from 'react-redux';
@@ -9,8 +7,20 @@ import {
   Button,
 } from 'native-base';
 import { restaurantsFetch } from '../../actions/';
+import ListItem from './ListItem';
 
 class RestaurantList extends Component {
+  componentWillMount() {
+    this.props.restaurantsFetch();
+  }
+
+  renderItem({ item }) {
+    return (
+      <ListItem
+        restaurant={item}
+      />
+    );
+  }
   renderList() {
     if (this.props.loading) {
       return <Text>Loading...</Text>;
@@ -18,7 +28,8 @@ class RestaurantList extends Component {
     return (
       <FlatList
         data={this.props.restaurants}
-        renderItem={({ item }) => <Text>{item.name}</Text>}
+        renderItem={this.renderItem}
+        style={{ marginBottom: 25 }}
       />
     );
   }

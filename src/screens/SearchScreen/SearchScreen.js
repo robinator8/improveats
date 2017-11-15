@@ -1,4 +1,3 @@
-// TODO Maybe make this a stack navigator that leads to a RestaurantList
 import React, { Component } from 'react';
 import {
   Container,
