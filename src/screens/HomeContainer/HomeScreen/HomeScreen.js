@@ -8,9 +8,8 @@ import {
   Right,
   Button,
   Body,
-  Content,
-  Text,
 } from 'native-base';
+import RestaurantList from '../../../components/RestaurantList/RestaurantList';
 
 class HomeScreen extends Component {
   static navigationOptions = ({ navigation }) => ({
@@ -25,9 +24,16 @@ class HomeScreen extends Component {
           </Button>
         </Left>
         <Body>
-          <Title>Search</Title>
+          <Title>Improveats</Title>
         </Body>
-        <Right />
+        <Right>
+          <Button
+            transparent
+            onPress={() => navigation.navigate('SearchScreen')}
+          >
+            <Icon name='search' />
+          </Button>
+        </Right>
       </Header>
     )
   });
@@ -35,9 +41,9 @@ class HomeScreen extends Component {
   render() {
     return (
       <Container>
-        <Content padder>
-          <Text>Search Screen</Text>
-        </Content>
+        <RestaurantList
+          navigation={this.props.navigation}
+        />
       </Container>
     );
   }

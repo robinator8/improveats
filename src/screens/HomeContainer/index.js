@@ -7,12 +7,12 @@ import {
   Text,
   Button,
 } from 'native-base';
-import StackNavigator from './StackNavigator';
-import SearchScreen from '../SearchScreen/SearchScreen';
+import HomeScreen from './HomeScreen';
+import SearchScreen from './SearchScreen';
 
 export default TabNavigator(
   {
-    HomeScreen: { screen: StackNavigator },
+    HomeScreen: { screen: HomeScreen },
     SearchScreen: { screen: SearchScreen },
   },
   {

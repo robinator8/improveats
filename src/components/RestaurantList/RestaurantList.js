@@ -11,7 +11,9 @@ import ListItem from './ListItem';
 
 class RestaurantList extends Component {
   componentWillMount() {
-    this.props.restaurantsFetch();
+    if (this.props.restaurants.length === 0) {
+      this.props.restaurantsFetch();
+    }
   }
 
   renderItem({ item }) {
@@ -21,6 +23,7 @@ class RestaurantList extends Component {
       />
     );
   }
+
   renderList() {
     if (this.props.loading) {
       return <Text>Loading...</Text>;
@@ -35,10 +38,8 @@ class RestaurantList extends Component {
   }
 
   render() {
-    console.log(this.props);
     return (
       <Content padder>
-        <Text>RestaurantList</Text>
         <Button
           block
           onPress={() => this.props.navigation.navigate('RestaurantScreen')}

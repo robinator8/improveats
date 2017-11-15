@@ -1,13 +1,13 @@
 import React from 'react';
 import { DrawerNavigator } from 'react-navigation';
-import HomeScreen from '../HomeScreen';
+import HomeContainer from '../HomeContainer';
 import ProfileScreen from '../ProfileScreen';
 import LoginScreen from '../LoginScreen/LoginScreen';
 import SideBar from '../../components/SideBar/SideBar';
 
 const MainScreenRouter = DrawerNavigator(
   {
-    HomeScreen: { screen: HomeScreen },
+    HomeScreen: { screen: HomeContainer },
     LoginScreen: { screen: LoginScreen },
     ProfileScreen: { screen: ProfileScreen },
   },

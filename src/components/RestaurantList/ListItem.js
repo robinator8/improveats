@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { ImageBackground } from 'react-native';
 import {
   Card,
   CardItem,
@@ -7,14 +8,35 @@ import {
 
 class ListItem extends Component {
   render() {
+    const { name, cuisine, time, img, } = this.props.restaurant;
     return (
       <Card>
-        <CardItem>
-          <Text>{this.props.restaurant.name}</Text>
-        </CardItem>
+        <ImageBackground
+          source={{ uri: img }}
+          style={{ flex: 1 }}
+        >
+          <CardItem style={styles.CardItemStyle}>
+            <Text>{name}</Text>
+          </CardItem>
+          <CardItem style={styles.CardItemStyle}>
+            <Text>{cuisine}</Text>
+          </CardItem>
+          <CardItem style={styles.CardItemStyle}>
+            <Text>{time.open}</Text>
+          </CardItem>
+          <CardItem style={styles.CardItemStyle}>
+            <Text>{time.closed}</Text>
+          </CardItem>
+        </ImageBackground>
       </Card>
     );
   }
 }
+
+const styles = {
+  CardItemStyle: {
+    backgroundColor: 'transparent',
+  }
+};
 
 export default ListItem;

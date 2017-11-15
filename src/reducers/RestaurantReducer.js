@@ -8,7 +8,7 @@ import {
 } from '../actions/types';
 
 const INITIAL_STATE = {
-  restaurants: {},
+  restaurants: [],
   restaurant: {},
   loading: true,
   error: '',
