@@ -28,11 +28,14 @@ class RestaurantList extends Component {
     if (this.props.loading) {
       return <Text>Loading...</Text>;
     }
+    if (this.props.error) {
+      return <Text>Error</Text>;
+    }
     return (
       <FlatList
         data={this.props.restaurants}
         renderItem={this.renderItem}
-        style={{ marginBottom: 25 }}
+        style={{ marginBottom: 15 }}
       />
     );
   }

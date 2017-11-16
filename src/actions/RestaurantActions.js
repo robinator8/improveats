@@ -6,6 +6,7 @@ import {
   RESTAURANT_FETCH_SUCCESS,
   RESTAURANT_FETCH_FAILURE,
 } from './types';
+import localRestaurants from '../testdata/restaurants.json';
 
 export const restaurantsFetch = () => (
   (dispatch) => {
@@ -26,6 +27,14 @@ export const restaurantsFetch = () => (
 );
 
 const restaurantsFetchSuccess = (dispatch, restaurants) => {
+  if (restaurants.error) {
+    // throw restaurants.error;
+    dispatch({
+      type: RESTAURANTS_FETCH_SUCCESS,
+      payload: localRestaurants,
+    });
+    return;
+  }
   dispatch({
     type: RESTAURANTS_FETCH_SUCCESS,
     payload: restaurants,
