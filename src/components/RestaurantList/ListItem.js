@@ -5,7 +5,6 @@ import {
   CardItem,
   Text,
   Left,
-  Thumbnail,
   Body,
   Button,
   Icon,
@@ -14,29 +13,32 @@ import {
 
 class ListItem extends Component {
   render() {
-    const { name, cuisine, time, img, } = this.props.restaurant;
+    const { name, cuisine, time, img, favorited } = this.props.restaurant;
     return (
       <Card>
-        <CardItem>
-          <Left>
+        <CardItem style={{ backgroundColor: '#ae263d' }}>
+          <Left style={{ flex: 5 }}>
             <Body>
-              <Text>{name}</Text>
-              <Text note>{cuisine}</Text>
+              <Text style={{ color: '#fff' }}>{name}</Text>
+              <Text note style={{ color: '#ccc' }}>{cuisine}</Text>
             </Body>
           </Left>
-          <Right>
+          <Right style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
             <Button transparent>
-              <Icon name='ios-heart' />
+              <Icon
+                name={favorited ? 'ios-heart' : 'ios-heart-outline'}
+                style={{ fontSize: 35, color: '#fff' }}
+              />
             </Button>
           </Right>
         </CardItem>
         <CardItem cardBody>
           <ImageBackground source={{ uri: img }} style={{ height: 200, width: null, flex: 1 }} />
         </CardItem>
-        <CardItem>
+        <CardItem style={{ backgroundColor: '#333' }}>
           <Body />
           <Right>
-            <Text>{time.open} - {time.closed}</Text>
+            <Text style={{ color: '#fff' }}>{time.open} - {time.closed}</Text>
           </Right>
         </CardItem>
       </Card>
