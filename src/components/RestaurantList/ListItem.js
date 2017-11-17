@@ -58,7 +58,6 @@ class ListItem extends Component {
         <CardItem cardBody>
           <ImageBackground source={{ uri: img }} style={imageCardItem} />
         </CardItem>
-
       </Card>
     );
   }

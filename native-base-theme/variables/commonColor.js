@@ -26,7 +26,7 @@ export default {
   // Badge
   badgeBg: "#ED1727",
   badgeColor: "#fff",
-  
+
   // New Variable
   badgePadding: platform === "ios" ? 3 : 0,
 

@@ -10,6 +10,7 @@ import {
   Body,
   Content,
   Text,
+  CardItem,
 } from 'native-base';
 
 class SearchScreen extends Component {
@@ -37,6 +38,9 @@ class SearchScreen extends Component {
       <Container>
         <Content padder>
           <Text>Search Screend</Text>
+          <CardItem
+            style={{ padding: 10 }}
+          />
         </Content>
       </Container>
     );
