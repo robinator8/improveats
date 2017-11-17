@@ -1,19 +1,22 @@
 import React, { Component } from 'react';
-import { FlatList } from 'react-native';
+import { FlatList, View, RefreshControl, } from 'react-native';
 import { connect } from 'react-redux';
 import {
   Text,
-  Content,
-  Button,
 } from 'native-base';
 import { restaurantsFetch } from '../../actions/';
 import ListItem from './ListItem';
 
 class RestaurantList extends Component {
+
   componentWillMount() {
     if (this.props.restaurants.length === 0) {
       this.props.restaurantsFetch();
     }
+  }
+
+  onRefresh() {
+    this.props.restaurantsFetch();
   }
 
   renderItem({ item }) {
@@ -25,9 +28,6 @@ class RestaurantList extends Component {
   }
 
   renderList() {
-    if (this.props.loading) {
-      return <Text>Loading...</Text>;
-    }
     if (this.props.error) {
       return <Text>Error</Text>;
     }
@@ -35,28 +35,25 @@ class RestaurantList extends Component {
       <FlatList
         data={this.props.restaurants}
         renderItem={this.renderItem}
-        style={{ marginBottom: 15 }}
+        style={{ padding: 10, left: 10, right: 10 }}
+        refreshControl={
+          <RefreshControl
+            refreshing={this.props.loading}
+            onRefresh={this.onRefresh.bind(this)}
+            colors={['#ae263d']}
+            tintColor='#ae263d'
+          />
+       }
       />
     );
   }
 
   render() {
     return (
-      <Content padder>
-        <Button
-          block
-          onPress={() => this.props.navigation.navigate('RestaurantScreen')}
-        >
-          <Text>Navigate</Text>
-        </Button>
-        <Button
-          block
-          onPress={() => this.props.restaurantsFetch()}
-        >
-          <Text>Load</Text>
-        </Button>
-        {this.renderList()}
-      </Content>
+        <View style={{ flex: 1 }}>
+          {/*this.props.navigation.navigate('RestaurantScreen')*/}
+          {this.renderList()}
+        </View>
     );
   }
 }

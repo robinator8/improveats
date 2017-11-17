@@ -5,7 +5,6 @@ import {
   CardItem,
   Text,
   Left,
-  Body,
   Button,
   Icon,
   Right,
@@ -20,9 +19,12 @@ class ListItem extends Component {
       nameCardItemLeft,
       nameCardItemLeftText,
       nameCardItemRight,
+      nameCarditemRightButton,
       nameCardItemRightIcon,
       cuisineCardItem,
+      cuisineCardItemLeft,
       cuisineCardItemLeftText,
+      cuisineCardItemRight,
       cuisineCardItemRightText,
       imageCardItem
     } = styles;
@@ -35,7 +37,7 @@ class ListItem extends Component {
           </Left>
 
           <Right style={nameCardItemRight}>
-            <Button transparent>
+            <Button transparent style={nameCarditemRightButton}>
               <Icon
                 name={favorited ? 'ios-heart' : 'ios-heart-outline'}
                 style={nameCardItemRightIcon}
@@ -45,10 +47,10 @@ class ListItem extends Component {
         </CardItem>
 
         <CardItem style={cuisineCardItem}>
-          <Left>
+          <Left style={cuisineCardItemLeft}>
             <Text style={cuisineCardItemLeftText}>{cuisine}</Text>
           </Left>
-          <Right>
+          <Right style={cuisineCardItemRight}>
             <Text style={cuisineCardItemRightText}>{time.open} - {time.closed}</Text>
           </Right>
         </CardItem>
@@ -65,37 +67,49 @@ class ListItem extends Component {
 const styles = StyleSheet.create({
   mainCard: {
     backgroundColor: 'transparent',
+    margin: 100,
   },
 
   nameCardItem: {
     backgroundColor: '#ae263d',
+    flex: 1,
   },
   nameCardItemLeft: {
     flex: 5,
   },
   nameCardItemLeftText: {
-    color: '#fff', fontSize: 18,
+    color: '#fff',
+    fontSize: 18,
   },
   nameCardItemRight: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    height: 0
+    height: 0,
+  },
+  nameCarditemRightButton: {
+    alignItems: 'center',
   },
   nameCardItemRightIcon: {
     fontSize: 35,
     color: '#fff',
-    paddingHorizontal: 10
+    paddingHorizontal: 0,
   },
 
   cuisineCardItem: {
-    backgroundColor: '#333',
+    backgroundColor: '#2a2a2a',
+    height: 35,
+    flex: 1
+  },
+  cuisineCardItemLeft: {
   },
   cuisineCardItemLeftText: {
-    color: '#7bf'
+    color: '#22aeff',
+  },
+  cuisineCardItemRight: {
   },
   cuisineCardItemRightText: {
-    color: '#fff'
+    color: '#fff',
   },
 
   imageCardItem: {
