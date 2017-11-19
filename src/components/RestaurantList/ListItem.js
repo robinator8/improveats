@@ -9,7 +9,6 @@ import {
   Icon,
   Right,
 } from 'native-base';
-import Rating from '../general/Rating';
 
 class ListItem extends Component {
   render() {
@@ -53,7 +52,7 @@ class ListItem extends Component {
             </Button>
             <Button transparent style={nameCarditemRightButton}>
               <Icon
-                name={favorited ? 'ios-heart' : 'ios-heart-outline'}
+                name={favorited ? 'md-heart' : 'md-heart-outline'}
                 style={nameCardItemRightIcon}
               />
             </Button>
@@ -83,27 +82,21 @@ const styles = StyleSheet.create({
   },
   nameCardItem: {
     backgroundColor: '#ae263d',
-    height: 45,
   },
   nameCardItemLeft: {
-    justifyContent: 'flex-start',
-    flexDirection: 'column',
-    alignItems: 'flex-start',
+
   },
   nameCardItemLeftText: {
-    textAlign: 'left',
-    alignSelf: 'flex-start',
     color: '#fff',
     fontSize: 18,
   },
   nameCardItemRight: {
-    alignSelf: 'center',
     justifyContent: 'flex-end',
     alignItems: 'center',
     flexDirection: 'row',
   },
   nameCardItemRightText: {
-    fontSize: 18,
+    fontSize: 20,
     color: '#fff',
   },
   nameCarditemRightButton: {

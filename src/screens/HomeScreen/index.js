@@ -26,7 +26,7 @@ export default TabNavigator(
               active={props.navigationState.index === 0}
               onPress={() => props.navigation.navigate(HOME_TAB)}
             >
-              <Icon name='bowtie' />
+              <Icon name='md-home' />
               <Text>Home</Text>
             </Button>
             <Button
@@ -34,7 +34,7 @@ export default TabNavigator(
               active={props.navigationState.index === 1}
               onPress={() => props.navigation.navigate(SEARCH_TAB)}
             >
-              <Icon name='briefcase' />
+              <Icon name='md-search' />
               <Text>Search</Text>
             </Button>
           </FooterTab>

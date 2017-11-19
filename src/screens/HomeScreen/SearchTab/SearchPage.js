@@ -10,7 +10,6 @@ import {
   Body,
   Content,
   Text,
-  CardItem,
 } from 'native-base';
 import { DRAWER_OPEN } from '../../screens';
 
@@ -38,10 +37,7 @@ class SearchPage extends Component {
     return (
       <Container>
         <Content padder>
-          <Text>Search Screend</Text>
-          <CardItem
-            style={{ padding: 10 }}
-          />
+          <Text>Search Screen</Text>
         </Content>
       </Container>
     );

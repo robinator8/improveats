@@ -75,7 +75,7 @@ class LoginScreen extends Component {
             </Button>
           </Left>
           <Body>
-            <Title>LoginScreen</Title>
+            <Title>Login</Title>
           </Body>
           <Right />
         </Header>
