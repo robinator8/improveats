@@ -10,24 +10,25 @@ import {
   Body,
 } from 'native-base';
 import { restaurantsFetch } from '../../../actions/';
+import { DRAWER_OPEN, SEARCH_TAB, } from '../../screens';
 
 const MyHeader = (props) => (
   <Header>
     <Left>
       <Button
         transparent
-        onPress={() => props.navigation.navigate('DrawerOpen')}
+        onPress={() => props.navigation.navigate(DRAWER_OPEN)}
       >
         <Icon name='menu' />
       </Button>
     </Left>
     <Body>
-      <Title>Improveats</Title>
+      <Title>Home</Title>
     </Body>
     <Right>
       <Button
         transparent
-        onPress={() => props.navigation.navigate('SearchScreen')}
+        onPress={() => props.navigation.navigate(SEARCH_TAB)}
       >
         <Icon name='search' />
       </Button>

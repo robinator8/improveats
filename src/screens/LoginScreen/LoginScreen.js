@@ -19,6 +19,7 @@ import {
   CardItem,
 } from 'native-base';
 import { login, emailChanged, passwordChanged } from '../../actions';
+import { DRAWER_OPEN } from '../screens';
 
 class LoginScreen extends Component {
   state = { focusPasswordInput: false } ;
@@ -68,7 +69,7 @@ class LoginScreen extends Component {
           <Left>
             <Button
               transparent
-              onPress={() => this.props.navigation.navigate('DrawerOpen')}
+              onPress={() => this.props.navigation.navigate(DRAWER_OPEN)}
             >
               <Icon name='menu' />
             </Button>
@@ -94,19 +95,15 @@ class LoginScreen extends Component {
                 onChangeText={this.onEmailChange.bind(this)}
                 value={email}
                 returnKeyType='next'
-                onSubmitEditing={() => { this.setState({ focusPasswordInput: true }); }}
-                // TRYING TO FIGURE OUT HOW TO FOCUS OTHER INPUT
               />
             </Item>
             <Item stackedLabel last>
               <Label>Password</Label>
               <Input
-                ref='PasswordInput'
                 secureTextEntry
                 onChangeText={this.onPasswordChange.bind(this)}
                 value={(() => (setPassword ? password : undefined))()}
                 returnKeyType='send'
-                focus={this.state.focsPasswordInput}
               />
             </Item>
           </Form>

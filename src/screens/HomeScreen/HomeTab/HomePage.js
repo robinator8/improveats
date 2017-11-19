@@ -5,7 +5,7 @@ import RestaurantList from '../../../components/RestaurantList/RestaurantList';
 import { restaurantsFetch } from '../../../actions/';
 import Header from './Header';
 
-class HomeScreen extends Component {
+class HomePage extends Component {
   static navigationOptions = ({ navigation }) => ({
     header: <Header navigation={navigation} />
   });
@@ -21,4 +21,4 @@ class HomeScreen extends Component {
   }
 }
 
-export default connect(null, { restaurantsFetch })(HomeScreen);
+export default connect(null, { restaurantsFetch })(HomePage);

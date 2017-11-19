@@ -12,15 +12,16 @@ import {
   Text,
   CardItem,
 } from 'native-base';
+import { DRAWER_OPEN } from '../../screens';
 
-class SearchScreen extends Component {
+class SearchPage extends Component {
   static navigationOptions = ({ navigation }) => ({
     header: (
       <Header>
         <Left>
           <Button
             transparent
-            onPress={() => navigation.navigate('DrawerOpen')}
+            onPress={() => navigation.navigate(DRAWER_OPEN)}
           >
             <Icon name='menu' />
           </Button>
@@ -47,4 +48,4 @@ class SearchScreen extends Component {
   }
 }
 
-export default SearchScreen;
+export default SearchPage;

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Image, View } from 'react-native';
 import {
   Text,
   Container,
@@ -6,17 +7,34 @@ import {
   ListItem,
   Content,
 } from 'native-base';
+import { HOME_SCREEN, LOGIN_SCREEN } from '../../screens/screens';
 
 const routes = [
-  { name: 'Home', route: 'HomeScreen' },
-  { name: 'Profile', route: 'ProfileScreen' },
-  { name: 'Login', route: 'LoginScreen' },
+  { name: 'Home', route: HOME_SCREEN },
+  { name: 'Login', route: LOGIN_SCREEN },
 ];
 class SideBar extends Component {
   render() {
     return (
       <Container>
         <Content>
+          <View
+            style={{
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            height: 90,
+          }}
+          >
+            <Image
+              source={require('../../testdata/img/logo.png')}
+              style={{
+                resizeMode: 'contain',
+                flex: 1,
+              }}
+            />
+          </View>
+
           <List
             dataArray={routes}
             renderRow={({ name, route }) => (

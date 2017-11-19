@@ -1,8 +1,8 @@
 import { StackNavigator } from 'react-navigation';
-import SearchScreen from './SearchScreen';
+import SearchPage from './SearchPage';
 import RestaurantScreen from '../../RestaurantScreen';
 
 export default StackNavigator({
-  SearchScreen: { screen: SearchScreen },
+  SearchPage: { screen: SearchPage },
   RestaurantScreen: { screen: RestaurantScreen },
 });

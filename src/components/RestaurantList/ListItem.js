@@ -9,16 +9,19 @@ import {
   Icon,
   Right,
 } from 'native-base';
+import Rating from '../general/Rating';
 
 class ListItem extends Component {
   render() {
-    const { name, cuisine, time, img, favorited } = this.props.restaurant;
+    const { name, cuisine, time, img, favorited, rating } = this.props.restaurant;
     const {
       mainCard,
       nameCardItem,
       nameCardItemLeft,
       nameCardItemLeftText,
       nameCardItemRight,
+      nameCardItemRightText,
+      star,
       nameCarditemRightButton,
       nameCardItemRightIcon,
       cuisineCardItem,
@@ -26,7 +29,7 @@ class ListItem extends Component {
       cuisineCardItemLeftText,
       cuisineCardItemRight,
       cuisineCardItemRightText,
-      imageCardItem
+      imageCardItem,
     } = styles;
     return (
       <Card style={mainCard}>
@@ -37,6 +40,17 @@ class ListItem extends Component {
           </Left>
 
           <Right style={nameCardItemRight}>
+            <Text style={nameCardItemRightText}>{rating}</Text>
+            <Icon
+              name='md-star'
+              style={[nameCardItemRightIcon, star]}
+            />
+            <Button transparent style={nameCarditemRightButton}>
+              <Icon
+                name='pin'
+                style={nameCardItemRightIcon}
+              />
+            </Button>
             <Button transparent style={nameCarditemRightButton}>
               <Icon
                 name={favorited ? 'ios-heart' : 'ios-heart-outline'}
@@ -66,33 +80,43 @@ class ListItem extends Component {
 const styles = StyleSheet.create({
   mainCard: {
     backgroundColor: 'transparent',
-    margin: 100,
   },
-
   nameCardItem: {
     backgroundColor: '#ae263d',
-    flex: 1,
+    height: 45,
   },
   nameCardItemLeft: {
-    flex: 5,
+    justifyContent: 'flex-start',
+    flexDirection: 'column',
+    alignItems: 'flex-start',
   },
   nameCardItemLeftText: {
+    textAlign: 'left',
+    alignSelf: 'flex-start',
     color: '#fff',
     fontSize: 18,
   },
   nameCardItemRight: {
-    flex: 1,
-    justifyContent: 'center',
+    alignSelf: 'center',
+    justifyContent: 'flex-end',
     alignItems: 'center',
-    height: 0,
+    flexDirection: 'row',
+  },
+  nameCardItemRightText: {
+    fontSize: 18,
+    color: '#fff',
   },
   nameCarditemRightButton: {
     alignItems: 'center',
   },
+  star: {
+    color: '#fcbd58',
+    paddingLeft: 2,
+  },
   nameCardItemRightIcon: {
-    fontSize: 35,
+    fontSize: 30,
     color: '#fff',
-    paddingHorizontal: 0,
+    paddingHorizontal: 5,
   },
 
   cuisineCardItem: {
@@ -115,7 +139,7 @@ const styles = StyleSheet.create({
     height: 200,
     width: null,
     flex: 1
-  }
+  },
 });
 
 export default ListItem;
