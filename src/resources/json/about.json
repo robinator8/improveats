@@ -3,54 +3,54 @@
     "key": 0,
     "title": "About Us",
     "description": [
-      "At IMPROV, our mission is to help business owners succeed in the restaurant industry while providing customers with a more affordable, diverse and enjoyable dining experience.",
-      "Even the best restaurants have empty tables throughout the day, but we're here to solve this problem!",
-      "We connect hungry stomachs with empty tables, bringing benefit to both customers and restaurant owners.",
-      "With each reservation, we contribute to our IMPROVing Lives program – making a difference one meal at a time.",
-      "We're in the lifestyle business providing happiness - Happy Stomachs, Happy Pockets, Brighter Futures.",
+      { "key": 0, "text": "At IMPROV, our mission is to help business owners succeed in the restaurant industry while providing customers with a more affordable, diverse and enjoyable dining experience."},
+      { "key": 1, "text": "Even the best restaurants have empty tables throughout the day, but we're here to solve this problem!"},
+      { "key": 2, "text": "We connect hungry stomachs with empty tables, bringing benefit to both customers and restaurant owners."},
+      { "key": 3, "text": "With each reservation, we contribute to our IMPROVing Lives program – making a difference one meal at a time."},
+      { "key": 4, "text": "We're in the lifestyle business providing happiness - Happy Stomachs, Happy Pockets, Brighter Futures."},
     ]
   },
   {
     "key": 1,
     "title": "Looking for a place to eat?",
     "description": [
-      "We want to make your dining experience even better!",
-      "Here on our website you’ll find the best discounts and promotions at your favourite restaurants! If you’re feeling adventurous, you can explore new places and find hidden gems throughout the city. We’ll find the best offer for you based on the type of food you’re craving, your party size, and the time you’d like to dine.",
+      { "key": 0, "text": "We want to make your dining experience even better!"},
+      { "key": 1, "text": "Here on our website you’ll find the best discounts and promotions at your favourite restaurants! If you’re feeling adventurous, you can explore new places and find hidden gems throughout the city. We’ll find the best offer for you based on the type of food you’re craving, your party size, and the time you’d like to dine."},
     ],
-    "listTitle": "With IMPROV you can:",
-    "list": [
-      "Get exclusive deals at your favourite restaurants",
-      "Avoid long wait times",
-      "Discover new and exciting places",
-      "Help local businesses succeed",
-      "Contribute to a variety of causes around the world"
+    "pointsTitle": "With IMPROV you can:",
+    "points": [
+      { "key": 0, "text": "Get exclusive deals at your favourite restaurants"},
+      { "key": 1, "text": "Avoid long wait times"},
+      { "key": 2, "text": "Discover new and exciting places"},
+      { "key": 3, "text": "Help local businesses succeed"},
+      { "key": 4, "text": "Contribute to a variety of causes around the world"}
     ]
   },
   {
     "key": 2,
     "title": "Own a restaurant?",
     "description": [
-      "Our goal is to eliminate empty tables, and provide efficient & inexpensive advertising to help your restaurant become an even bigger success!",
-      "We provide a platform that allows you to fill up tables during slow times. Promotions and discounts can be created based on customer traffic, and can be uploaded to IMPROV on a day-to-day basis, or on a schedule. These offers will be available to users on their computers or mobile devices, giving them incentive to try your food, fall in love, & become loyal customers."
+      { "key": 0, "text": "Our goal is to eliminate empty tables, and provide efficient & inexpensive advertising to help your restaurant become an even bigger success!"},
+      { "key": 1, "text": "We provide a platform that allows you to fill up tables during slow times. Promotions and discounts can be created based on customer traffic, and can be uploaded to IMPROV on a day-to-day basis, or on a schedule. These offers will be available to users on their computers or mobile devices, giving them incentive to try your food, fall in love, & become loyal customers."}
     ],
-    "listTitle": "With IMPROV you can:",
-    "list": [
-      "Advertise and promote your restaurant",
-      "Increase your customer base",
-      "Reduce customer acquisition costs",
-      "Control your discounts and offers",
-      "Maximize employee productivity",
-      "And generate more profit, all at the same time!"
+    "pointsTitle": "With IMPROV you can:",
+    "points": [
+      { "key": 0, "text": "Advertise and promote your restaurant"},
+      { "key": 1, "text": "Increase your customer base"},
+      { "key": 2, "text": "Reduce customer acquisition costs"},
+      { "key": 3, "text": "Control your discounts and offers"},
+      { "key": 4, "text": "Maximize employee productivity"},
+      { "key": 5, "text": "And generate more profit, all at the same time!"}
     ]
   },
   {
     "key": 3,
     "title": "Contact Us",
     "description": [
-      "If you want to work with us, please send us an email or give us a call!",
-      "We are more than happy to answer all your questions.",
-      "info@improveats.com",
-      "+1 780 710 8472",
+      { "key": 0, "text": "If you want to work with us, please send us an email or give us a call!"},
+      { "key": 1, "text": "We are more than happy to answer all your questions."},
+      { "key": 2, "text": "info@improveats.com"},
+      { "key": 3, "text": "+1 780 710 8472"}
     ],
   }
 ]
