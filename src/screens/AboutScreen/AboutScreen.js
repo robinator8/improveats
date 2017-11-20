@@ -12,6 +12,7 @@ import {
   Body,
   Fab,
 } from 'native-base';
+import { phonecall, email, } from 'react-native-communications';
 import { DRAWER_OPEN } from '../screens';
 import AboutItem from './AboutItem';
 
@@ -59,10 +60,16 @@ class AboutScreen extends Component {
             onPress={() => this.setState({ activeFab: !this.state.activeFab })}
           >
             <Icon name="share" />
-            <Button style={{ backgroundColor: '#58e226' }}>
+            <Button
+              onPress={() => phonecall('17807108472', true)}
+              style={{ backgroundColor: '#58e226' }}
+            >
               <Icon name="md-call" />
             </Button>
-            <Button style={{ backgroundColor: '#ffa53c' }}>
+            <Button
+              onPress={() => email(['info@improveats.com'], null, null, null, null)}
+              style={{ backgroundColor: '#ffa53c' }}
+            >
               <Icon name="md-mail" />
             </Button>
           </Fab>

@@ -43,9 +43,9 @@ class AboutItem extends Component {
           <Text style={styles.pointsTitle}>{pointsTitle}</Text>
         </ListItem>
         <FlatList
+          style={pointsList}
           data={points}
           renderItem={this.renderPoint.bind(this)}
-          contentContainerStyle={pointsList}
         />
       </View>
     );
@@ -110,7 +110,9 @@ const styles = StyleSheet.create({
     fontSize: 20,
   },
   descriptionView: {
+    backgroundColor: '#fff',
     flex: 1,
+    marginLeft: 10,
   },
   descriptionList: {
     padding: 10,
@@ -122,10 +124,10 @@ const styles = StyleSheet.create({
 
   },
   pointsView: {
-
   },
   pointsList: {
     paddingLeft: 10,
+    flex: 1,
   },
   pointsTitleItem: {
     paddingLeft: 10,
@@ -134,6 +136,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
   },
   pointsTextItem: {
+    flex: 1,
     paddingLeft: 10,
     borderBottomWidth: 0,
     alignItems: 'center',
