@@ -20,18 +20,19 @@ class ListItem extends Component {
 
   render() {
     return (
-      <Card>
-        <CardItem>
-          <Text>Hello</Text>
-        </CardItem>
-      </Card>
+      <CardItem>
+        <Text>{this.props.item.title}</Text>
+      </CardItem>
     );
   }
 }
 
+const styles = {
+
+};
 
 const mapStateToProps = (state, ownProps) => {
-  const expanded = state.selectedLibraryId === ownProps.library.id;
+  const expanded = state.selectedLibraryId === ownProps.item.key;
 
   return { expanded };
 };

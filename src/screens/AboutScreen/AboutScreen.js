@@ -10,17 +10,13 @@ import {
   Right,
   Button,
   Body,
-  Content,
-  Text,
-  Card,
-  CardItem,
 } from 'native-base';
 import { DRAWER_OPEN } from '../screens';
+import AboutItem from './AboutItem';
 
 class AboutScreen extends Component {
   renderItem({ item }) {
-    console.log('item', item);
-    return <Text>Hello</Text>;
+    return <AboutItem item={item} />;
   }
 
   render() {
