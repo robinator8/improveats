@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import { Image, View, StyleSheet } from 'react-native';
+import { Image, View, StyleSheet, FlatList } from 'react-native';
 import {
   Text,
   Container,
-  List,
   ListItem,
   Content,
   Left,
@@ -18,12 +17,48 @@ import {
 } from '../../screens/screens';
 
 const routes = [
-  { name: 'HOME', route: HOME_SCREEN, icon: 'md-home' },
-  { name: 'LOGIN', route: LOGIN_SCREEN, icon: 'md-key' },
-  { name: 'ABOUT', route: ABOUT_SCREEN, icon: 'md-information-circle' },
-  { name: 'CONTACT', route: CONTACT_SCREEN, icon: 'md-key' },
+  { name: 'HOME', key: HOME_SCREEN, icon: 'md-home' },
+  { name: 'LOGIN', key: LOGIN_SCREEN, icon: 'md-key' },
+  { name: 'ABOUT', key: ABOUT_SCREEN, icon: 'md-information-circle' },
+  { name: 'CONTACT', key: CONTACT_SCREEN, icon: 'md-megaphone' },
 ];
+
 class SideBar extends Component {
+  itemActiveHelper(route) {
+    if (route === this.props.activeItemKey) {
+      return [styles.listItem, styles.listItemActive];
+    }
+    return styles.listItem;
+  }
+
+  renderItem({ item }) {
+    const { key, icon, name } = item;
+    const {
+      listItem,
+      listItemActive,
+      listItemLeft,
+      listItemIcon,
+      listItemBody,
+      listItemText,
+    } = styles;
+
+    return (
+      <ListItem
+        icon
+        style={(key === this.props.activeItemKey) ? [listItem, listItemActive] : listItem}
+        button
+        onPress={() => this.props.navigation.navigate(key)}
+      >
+        <Left style={listItemLeft}>
+          <Icon name={icon} style={listItemIcon} />
+        </Left>
+        <Body style={listItemBody}>
+          <Text style={listItemText}>{name}</Text>
+        </Body>
+      </ListItem>
+    );
+  }
+
   render() {
     const {
       content,
@@ -31,41 +66,22 @@ class SideBar extends Component {
       image,
       list,
       listContent,
-      listItem,
-      listItemLeft,
-      listItemIcon,
-      listItemBody,
-      listItemText,
     } = styles;
     return (
       <Container>
         <Content style={content}>
           <View style={imageView}>
             <Image
-              source={require('../../testdata/img/logo.png')}
+              source={require('../../resources/img/logo.png')}
               style={image}
             />
           </View>
-
-          <List
+          <FlatList
             style={list}
             contentContainerStyle={listContent}
-            dataArray={routes}
-            renderRow={({ name, route, icon }) => (
-                <ListItem
-                  icon
-                  style={listItem}
-                  button
-                  onPress={() => this.props.navigation.navigate(route)}
-                >
-                  <Left style={listItemLeft}>
-                    <Icon name={icon} style={listItemIcon} />
-                  </Left>
-                  <Body style={listItemBody}>
-                    <Text style={listItemText}>{name}</Text>
-                  </Body>
-                </ListItem>
-              )}
+            data={routes}
+            extraData={this.props.activeItemKey}
+            renderItem={this.renderItem.bind(this)}
           />
         </Content>
       </Container>
@@ -109,6 +125,9 @@ const styles = StyleSheet.create({
     borderBottomColor: '#222',
     borderTopWidth: 2,
     borderTopColor: '#333',
+  },
+  listItemActive: {
+    borderLeftColor: '#fff',
   },
   listItemLeft: {
     padding: 10,

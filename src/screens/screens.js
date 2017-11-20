@@ -5,5 +5,7 @@ export const SEARCH_TAB = 'SearchTab';
 export const SEARCH_PAGE = 'SearchPage';
 
 export const LOGIN_SCREEN = 'LoginScreen';
+export const ABOUT_SCREEN = 'AboutScreen';
+export const CONTACT_SCREEN = 'ContactScreen';
 
 export const DRAWER_OPEN = 'DrawerOpen';

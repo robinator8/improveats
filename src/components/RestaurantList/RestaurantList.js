@@ -35,7 +35,6 @@ class RestaurantList extends Component {
       <FlatList
         data={this.props.restaurants}
         renderItem={this.renderItem}
-        style={{}}
         contentContainerStyle={{ padding: 10, }}
         refreshControl={
           <RefreshControl

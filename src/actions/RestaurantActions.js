@@ -6,7 +6,7 @@ import {
   RESTAURANT_FETCH_SUCCESS,
   RESTAURANT_FETCH_FAILURE,
 } from './types';
-import localRestaurants from '../testdata/restaurants.json';
+import localRestaurants from '../resources/json/restaurants.json';
 
 export const restaurantsFetch = () => (
   (dispatch) => {

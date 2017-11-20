@@ -10,3 +10,5 @@ export const RESTAURANTS_FETCH_FAILURE = 'restaurants_fetch_failure';
 export const RESTAURANT_FETCH = 'restaurant_fetch';
 export const RESTAURANT_FETCH_SUCCESS = 'restaurant_fetch_success';
 export const RESTAURANT_FETCH_FAILURE = 'restaurant_fetch_failure';
+
+export const ABOUT_EXPAND = 'about_expand';
