@@ -43,7 +43,7 @@ export default (state = INITIAL_STATE, action) => {
       return {
         ...state,
         loading: false,
-        restaurants: action.payload,
+        restaurant: action.payload,
         error: ''
       };
     case RESTAURANT_FETCH_FAILURE:

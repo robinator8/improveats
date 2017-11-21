@@ -10,6 +10,7 @@ import { connect } from 'react-redux';
 import {
   ListItem,
   Text,
+  Icon
 } from 'native-base';
 import { aboutExpand } from '../../actions';
 
@@ -20,52 +21,57 @@ class AboutItem extends Component {
     LayoutAnimation.easeInEaseOut();
   }
 
-  renderDescription({ item }) {
+  renderPoint({ item }) {
+    const { pointsTextItem, pointsText, pointsIcon } = styles;
     return (
-      <ListItem>
-        <Text>{item.text}</Text>
+      <ListItem style={pointsTextItem} icon>
+        <Icon name='md-checkmark-circle-outline' style={pointsIcon} />
+        <Text style={pointsText}>{item.text}</Text>
       </ListItem>
     );
   }
 
   renderPoints() {
+    const { pointsView, pointsList, pointsTitleItem } = styles;
     const { pointsTitle, points } = this.props.item;
     if (!pointsTitle) {
       return;
     }
     return (
-      <View>
-        <ListItem>
-          <Text>{pointsTitle}</Text>
+      <View style={pointsView}>
+        <ListItem style={pointsTitleItem}>
+          <Text style={styles.pointsTitle}>{pointsTitle}</Text>
         </ListItem>
         <FlatList
+          style={pointsList}
           data={points}
           renderItem={this.renderPoint.bind(this)}
-          contentContainerStyle={{ padding: 10 }}
         />
       </View>
     );
   }
 
-  renderPoint({ item }) {
+  renderDescription({ item }) {
+    const { descriptionItem, descriptionText } = styles;
     return (
-      <ListItem>
-        <Text>{item.text}</Text>
+      <ListItem style={descriptionItem}>
+        <Text style={descriptionText}>{item.text}</Text>
       </ListItem>
     );
   }
 
   renderContent() {
     const { item, expanded } = this.props;
+    const { descriptionView, descriptionList } = styles;
     if (!expanded) {
       return;
     }
     return (
-      <View style={{ flex: 1 }}>
+      <View style={descriptionView}>
         <FlatList
           data={item.description}
           renderItem={this.renderDescription.bind(this)}
-          contentContainerStyle={{ padding: 10 }}
+          contentContainerStyle={descriptionList}
         />
         {this.renderPoints()}
       </View>
@@ -103,23 +109,45 @@ const styles = StyleSheet.create({
   titleText: {
     fontSize: 20,
   },
+  descriptionView: {
+    backgroundColor: '#fff',
+    flex: 1,
+    marginLeft: 10,
+  },
   descriptionList: {
-
+    padding: 10,
   },
   descriptionItem: {
-
+    borderBottomWidth: 0,
   },
   descriptionText: {
 
   },
+  pointsView: {
+  },
   pointsList: {
-
+    paddingLeft: 10,
+    flex: 1,
+  },
+  pointsTitleItem: {
+    paddingLeft: 10,
   },
   pointsTitle: {
-
+    fontSize: 20,
+  },
+  pointsTextItem: {
+    flex: 1,
+    paddingLeft: 10,
+    borderBottomWidth: 0,
+    alignItems: 'center',
+    justifyContent: 'flex-start',
+  },
+  pointsIcon: {
+    fontSize: 20,
+    color: '#ae263d',
   },
   pointsText: {
-
+    paddingLeft: 10,
   },
 });
 

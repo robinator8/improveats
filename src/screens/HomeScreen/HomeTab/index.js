@@ -4,5 +4,4 @@ import RestaurantScreen from '../../RestaurantScreen';
 
 export default StackNavigator({
   HomePage: { screen: HomePage },
-  RestaurantScreen: { screen: RestaurantScreen },
 });

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { ImageBackground, StyleSheet } from 'react-native';
+import { ImageBackground, StyleSheet, TouchableWithoutFeedback } from 'react-native';
+import { connect } from 'react-redux';
 import {
   Card,
   CardItem,
@@ -9,10 +10,17 @@ import {
   Icon,
   Right,
 } from 'native-base';
+import { restaurantFetch } from '../../actions';
 
 class ListItem extends Component {
+  onCardPress() {
+    const { navigation, restaurant } = this.props;
+    this.props.restaurantFetch(restaurant);
+    navigation.navigate('RestaurantScreen');
+  }
+
   render() {
-    const { name, cuisine, time, img, favorited, rating } = this.props.restaurant;
+    const { name, cuisines, time, img, favorited, rating } = this.props.restaurant;
     const {
       mainCard,
       nameCardItem,
@@ -31,47 +39,49 @@ class ListItem extends Component {
       imageCardItem,
     } = styles;
     return (
-      <Card style={mainCard}>
+      <TouchableWithoutFeedback onPress={this.onCardPress.bind(this)}>
+        <Card style={mainCard}>
 
-        <CardItem style={nameCardItem}>
-          <Left style={nameCardItemLeft}>
-            <Text style={nameCardItemLeftText}>{name}</Text>
-          </Left>
+          <CardItem style={nameCardItem}>
+            <Left style={nameCardItemLeft}>
+              <Text style={nameCardItemLeftText}>{name}</Text>
+            </Left>
 
-          <Right style={nameCardItemRight}>
-            <Text style={nameCardItemRightText}>{rating}</Text>
-            <Icon
-              name='md-star'
-              style={[nameCardItemRightIcon, star]}
-            />
-            <Button transparent style={nameCarditemRightButton}>
+            <Right style={nameCardItemRight}>
+              <Text style={nameCardItemRightText}>{rating}</Text>
               <Icon
-                name='pin'
-                style={nameCardItemRightIcon}
+                name='md-star'
+                style={[nameCardItemRightIcon, star]}
               />
-            </Button>
-            <Button transparent style={nameCarditemRightButton}>
-              <Icon
-                name={favorited ? 'md-heart' : 'md-heart-outline'}
-                style={nameCardItemRightIcon}
-              />
-            </Button>
-          </Right>
-        </CardItem>
+              <Button transparent style={nameCarditemRightButton}>
+                <Icon
+                  name='pin'
+                  style={nameCardItemRightIcon}
+                />
+              </Button>
+              <Button transparent style={nameCarditemRightButton}>
+                <Icon
+                  name={favorited ? 'md-heart' : 'md-heart-outline'}
+                  style={nameCardItemRightIcon}
+                />
+              </Button>
+            </Right>
+          </CardItem>
 
-        <CardItem style={cuisineCardItem}>
-          <Left style={cuisineCardItemLeft}>
-            <Text style={cuisineCardItemLeftText}>{cuisine}</Text>
-          </Left>
-          <Right style={cuisineCardItemRight}>
-            <Text style={cuisineCardItemRightText}>{time.open} - {time.closed}</Text>
-          </Right>
-        </CardItem>
+          <CardItem style={cuisineCardItem}>
+            <Left style={cuisineCardItemLeft}>
+              <Text style={cuisineCardItemLeftText}>{cuisines.main}</Text>
+            </Left>
+            <Right style={cuisineCardItemRight}>
+              <Text style={cuisineCardItemRightText}>{time.open} - {time.closed}</Text>
+            </Right>
+          </CardItem>
 
-        <CardItem cardBody>
-          <ImageBackground source={{ uri: img }} style={imageCardItem} />
-        </CardItem>
-      </Card>
+          <CardItem cardBody>
+            <ImageBackground source={{ uri: img }} style={imageCardItem} />
+          </CardItem>
+        </Card>
+      </TouchableWithoutFeedback>
     );
   }
 }
@@ -135,4 +145,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ListItem;
+export default connect(null, { restaurantFetch })(ListItem);

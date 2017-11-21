@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, FlatList } from 'react-native';
+import { View, FlatList, LayoutAnimation, UIManager } from 'react-native';
 import { connect } from 'react-redux';
 import {
   Container,
@@ -10,11 +10,25 @@ import {
   Right,
   Button,
   Body,
+  Fab,
 } from 'native-base';
+import { phonecall, email, } from 'react-native-communications';
 import { DRAWER_OPEN } from '../screens';
 import AboutItem from './AboutItem';
 
+UIManager.setLayoutAnimationEnabledExperimental(true);
 class AboutScreen extends Component {
+  constructor() {
+    super();
+    this.state = {
+      activeFab: true
+    };
+  }
+
+  componentWillUpdate() {
+    LayoutAnimation.easeInEaseOut();
+  }
+
   renderItem({ item }) {
     return <AboutItem item={item} />;
   }
@@ -37,11 +51,34 @@ class AboutScreen extends Component {
           <Right />
         </Header>
         <View style={{ flex: 1 }}>
-          <FlatList
-            data={this.props.data}
-            renderItem={this.renderItem}
-            contentContainerStyle={{ padding: 10 }}
-          />
+          <Fab
+            active={this.state.activeFab}
+            direction="up"
+            containerStyle={{ }}
+            style={{ backgroundColor: '#ae263d' }}
+            position="bottomRight"
+            onPress={() => this.setState({ activeFab: !this.state.activeFab })}
+          >
+            <Icon name="share" />
+            <Button
+              onPress={() => phonecall('17807108472', true)}
+              style={{ backgroundColor: '#58e226' }}
+            >
+              <Icon name="md-call" />
+            </Button>
+            <Button
+              onPress={() => email(['info@improveats.com'], null, null, null, null)}
+              style={{ backgroundColor: '#ffa53c' }}
+            >
+              <Icon name="md-mail" />
+            </Button>
+          </Fab>
+          <View>
+            <FlatList
+              data={this.props.data}
+              renderItem={this.renderItem}
+            />
+          </View>
         </View>
       </Container>
     );
