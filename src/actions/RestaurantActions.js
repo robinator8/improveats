@@ -47,3 +47,10 @@ const restaurantsFetchFailure = (dispatch, error) => {
     payload: error,
   });
 };
+
+export const restaurantFetch = (restaurant) => (
+  {
+    type: RESTAURANT_FETCH_SUCCESS,
+    payload: restaurant,
+  }
+);

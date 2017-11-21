@@ -21,7 +21,7 @@ class AboutScreen extends Component {
   constructor() {
     super();
     this.state = {
-      activeFab: false
+      activeFab: true
     };
   }
 

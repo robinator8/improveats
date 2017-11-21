@@ -1,5 +1,5 @@
-// TODO
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import {
   Container,
   Header,
@@ -33,12 +33,27 @@ class RestaurantView extends Component {
   render() {
     return (
       <Container>
+        <Header>
+          <Left>
+            <Button transparent onPress={() => this.props.navigation.goBack()}>
+              <Icon name='arrow-back' />
+            </Button>
+          </Left>
+          <Body>
+            <Title>Restaurant</Title>
+          </Body>
+          <Right />
+        </Header>
         <Content padder>
-          <Text>Restaurant View</Text>
+          <Text>{this.props.restaurant.name}</Text>
         </Content>
       </Container>
     );
   }
 }
 
-export default RestaurantView;
+const mapStateToProps = ({ restaurant }) => (
+  { restaurant: restaurant.restaurant }
+);
+
+export default connect(mapStateToProps)(RestaurantView);

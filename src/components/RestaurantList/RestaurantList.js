@@ -23,6 +23,7 @@ class RestaurantList extends Component {
     return (
       <ListItem
         restaurant={item}
+        navigation={this.props.navigation}
       />
     );
   }
@@ -34,7 +35,7 @@ class RestaurantList extends Component {
     return (
       <FlatList
         data={this.props.restaurants}
-        renderItem={this.renderItem}
+        renderItem={this.renderItem.bind(this)}
         contentContainerStyle={{ padding: 10, }}
         refreshControl={
           <RefreshControl
@@ -51,7 +52,6 @@ class RestaurantList extends Component {
   render() {
     return (
         <View style={{ flex: 1 }}>
-          {/*this.props.navigation.navigate('RestaurantScreen')*/}
           {this.renderList()}
         </View>
     );
