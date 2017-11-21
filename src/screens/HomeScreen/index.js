@@ -1,44 +1,8 @@
-import React from 'react';
-import { TabNavigator } from 'react-navigation';
-import {
-  Footer,
-  FooterTab,
-  Icon,
-  Text,
-  Button,
-} from 'native-base';
-import HomeTab from './HomeTab';
-import SearchTab from './SearchTab';
-import { HOME_TAB, SEARCH_TAB } from '../screens';
+import { StackNavigator } from 'react-navigation';
+import HomePage from './HomePage';
+import RestaurantScreen from '../RestaurantScreen';
 
-export default TabNavigator(
-  {
-    HomeTab: { screen: HomeTab },
-    SearchTab: { screen: SearchTab },
-  },
-  {
-    tabBarPosition: 'bottom',
-    tabBarComponent: props => (
-        <Footer>
-          <FooterTab>
-            <Button
-              vertical
-              active={props.navigationState.index === 0}
-              onPress={() => props.navigation.navigate(HOME_TAB)}
-            >
-              <Icon name='md-home' />
-              <Text>Home</Text>
-            </Button>
-            <Button
-              vertical
-              active={props.navigationState.index === 1}
-              onPress={() => props.navigation.navigate(SEARCH_TAB)}
-            >
-              <Icon name='md-search' />
-              <Text>Search</Text>
-            </Button>
-          </FooterTab>
-        </Footer>
-      )
-    }
-);
+export default StackNavigator({
+  HomePage: { screen: HomePage },
+  RestaurantScreen: { screen: RestaurantScreen }
+});

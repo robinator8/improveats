@@ -23,7 +23,7 @@ class RestaurantView extends Component {
           </Button>
         </Left>
         <Body>
-          <Title>Restaurant</Title>
+          <Title>Restaurantt</Title>
         </Body>
         <Right />
       </Header>
@@ -33,17 +33,6 @@ class RestaurantView extends Component {
   render() {
     return (
       <Container>
-        <Header>
-          <Left>
-            <Button transparent onPress={() => this.props.navigation.goBack()}>
-              <Icon name='arrow-back' />
-            </Button>
-          </Left>
-          <Body>
-            <Title>Restaurant</Title>
-          </Body>
-          <Right />
-        </Header>
         <Content padder>
           <Text>{this.props.restaurant.name}</Text>
         </Content>

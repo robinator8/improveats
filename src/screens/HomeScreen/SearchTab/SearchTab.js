@@ -13,7 +13,7 @@ import {
 } from 'native-base';
 import { DRAWER_OPEN } from '../../screens';
 
-class SearchPage extends Component {
+class SearchTab extends Component {
   static navigationOptions = ({ navigation }) => ({
     header: (
       <Header>
@@ -44,4 +44,4 @@ class SearchPage extends Component {
   }
 }
 
-export default SearchPage;
+export default SearchTab;
