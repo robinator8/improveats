@@ -48,37 +48,26 @@ class AboutScreen extends Component {
           <Body>
             <Title>About</Title>
           </Body>
-          <Right />
-        </Header>
-        <View style={{ flex: 1 }}>
-          <Fab
-            active={this.state.activeFab}
-            direction="up"
-            containerStyle={{ }}
-            style={{ backgroundColor: '#ae263d' }}
-            position="bottomRight"
-            onPress={() => this.setState({ activeFab: !this.state.activeFab })}
-          >
-            <Icon name="share" />
+          <Right>
             <Button
+              transparent
               onPress={() => phonecall('17807108472', true)}
-              style={{ backgroundColor: '#58e226' }}
             >
               <Icon name="md-call" />
             </Button>
             <Button
+              transparent
               onPress={() => email(['info@improveats.com'], null, null, null, null)}
-              style={{ backgroundColor: '#ffa53c' }}
             >
               <Icon name="md-mail" />
             </Button>
-          </Fab>
-          <View>
-            <FlatList
-              data={this.props.data}
-              renderItem={this.renderItem}
-            />
-          </View>
+          </Right>
+        </Header>
+        <View style={{ flex: 1 }}>
+          <FlatList
+            data={this.props.data}
+            renderItem={this.renderItem}
+          />
         </View>
       </Container>
     );

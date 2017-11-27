@@ -10,6 +10,5 @@ export const CONTACT_SCREEN = 'ContactScreen';
 export const DRAWER_OPEN = 'DrawerOpen';
 
 export const RESTAURANT_SCREEN = 'RestaurantScreen';
-export const RESTAURANT_TAB = 'RestaurantTab';
-export const CUISINE_TAB = 'CuisineTab';
-export const SERVICES_TAB = 'ServicesTab';
+export const RESERVE_TAB = 'ReserveTab';
+export const INFO_TAB = 'InfoTab';

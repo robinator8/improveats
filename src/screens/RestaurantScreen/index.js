@@ -7,16 +7,19 @@ import {
   Text,
   Button,
 } from 'native-base';
-import RestaurantTab from './RestaurantScreen';
-import { RESTAURANT_TAB, CUISINE_TAB, SERVICES_TAB } from '../screens';
+import ReserveTab from './ReserveTab';
+import InfoTab from './InfoTab';
+import { RESERVE_TAB, INFO_TAB } from '../screens';
 
 const RestaurantScreen = TabNavigator(
   {
-    RestaurantTab: { screen: RestaurantTab },
-    // CuisineTab: { screen: CuisineTab },
-    // ServicesTab: { screen: ServicesTab },
+    ReserveTab: { screen: ReserveTab },
+    InfoTab: { screen: InfoTab },
   },
   {
+    swipeEnabled: true,
+    lazy: true,
+    backBehavior: 'none',
     tabBarPosition: 'bottom',
     tabBarComponent: props => (
         <Footer>
@@ -24,26 +27,18 @@ const RestaurantScreen = TabNavigator(
             <Button
               vertical
               active={props.navigationState.index === 0}
-              onPress={() => props.navigation.navigate(RESTAURANT_TAB)}
+              onPress={() => props.navigation.navigate(RESERVE_TAB)}
             >
-              <Icon name='md-home' />
+              <Icon name='md-time' />
               <Text>Reserve</Text>
             </Button>
             <Button
               vertical
               active={props.navigationState.index === 1}
-              onPress={() => props.navigation.navigate(CUISINE_TAB)}
+              onPress={() => props.navigation.navigate(INFO_TAB)}
             >
-              <Icon name='md-search' />
-              <Text>Cuisine</Text>
-            </Button>
-            <Button
-              vertical
-              active={props.navigationState.index === 2}
-              onPress={() => props.navigation.navigate(SERVICES_TAB)}
-            >
-              <Icon name='md-search' />
-              <Text>Services</Text>
+              <Icon name='md-restaurant' />
+              <Text>Info</Text>
             </Button>
           </FooterTab>
         </Footer>

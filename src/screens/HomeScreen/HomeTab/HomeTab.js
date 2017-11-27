@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import { Container } from 'native-base';
 import RestaurantList from '../../../components/RestaurantList/RestaurantList';
-import { restaurantsFetch } from '../../../actions/';
 import Header from './Header';
 
 class HomeTab extends Component {
@@ -21,4 +19,4 @@ class HomeTab extends Component {
   }
 }
 
-export default connect(null, { restaurantsFetch })(HomeTab);
+export default HomeTab;
