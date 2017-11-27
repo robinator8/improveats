@@ -13,7 +13,7 @@ import {
   Body,
 } from 'native-base';
 
-const MyHeader = ({ navigation, name, favorited }) => (
+const MyHeader = ({ navigation, favorited }) => (
   <Header>
     <Left>
       <Button
@@ -26,10 +26,7 @@ const MyHeader = ({ navigation, name, favorited }) => (
       </Button>
     </Left>
     <Body>
-      <Title>{
-        // name
-        'The Restaurant'
-      }</Title>
+      <Title>The Restaurant</Title>
     </Body>
     <Right>
       <Button transparent>

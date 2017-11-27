@@ -18,6 +18,7 @@ export default TabNavigator(
   },
   {
     lazy: true,
+    swipeEnabled: false,
     tabBarPosition: 'bottom',
     tabBarComponent: props => (
         <Footer>

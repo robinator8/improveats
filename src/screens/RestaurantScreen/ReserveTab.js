@@ -11,7 +11,7 @@ import {
   CardItem,
 } from 'native-base';
 
-class RestaurantTab extends Component {
+class ReserveTab extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -88,4 +88,4 @@ const mapStateToProps = ({ restaurant }) => (
   { restaurant: restaurant.restaurant }
 );
 
-export default connect(mapStateToProps)(RestaurantTab);
+export default connect(mapStateToProps)(ReserveTab);
