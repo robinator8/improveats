@@ -14,6 +14,7 @@ import {
 } from 'native-base';
 import { aboutExpand } from '../../actions';
 
+UIManager.setLayoutAnimationEnabledExperimental &&
 UIManager.setLayoutAnimationEnabledExperimental(true);
 
 class AboutItem extends Component {

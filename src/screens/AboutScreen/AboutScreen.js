@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, FlatList, LayoutAnimation, UIManager } from 'react-native';
+import { View, FlatList, LayoutAnimation } from 'react-native';
 import { connect } from 'react-redux';
 import {
   Container,
@@ -10,13 +10,11 @@ import {
   Right,
   Button,
   Body,
-  Fab,
 } from 'native-base';
 import { phonecall, email, } from 'react-native-communications';
 import { DRAWER_OPEN } from '../screens';
 import AboutItem from './AboutItem';
 
-UIManager.setLayoutAnimationEnabledExperimental(true);
 class AboutScreen extends Component {
   constructor() {
     super();
