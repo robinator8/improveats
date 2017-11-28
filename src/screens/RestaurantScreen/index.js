@@ -17,7 +17,7 @@ const RestaurantScreen = TabNavigator(
     InfoTab: { screen: InfoTab },
   },
   {
-    swipeEnabled: false,
+    swipeEnabled: true,
     lazy: false,
     backBehavior: 'none',
     tabBarPosition: 'bottom',
