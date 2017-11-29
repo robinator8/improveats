@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ImageBackground, StyleSheet, TouchableWithoutFeedback } from 'react-native';
+import { Image, StyleSheet, TouchableWithoutFeedback } from 'react-native';
 import { connect } from 'react-redux';
 import {
   Card,
@@ -78,7 +78,7 @@ class ListItem extends Component {
           </CardItem>
 
           <CardItem cardBody>
-            <ImageBackground source={{ uri: img }} style={imageCardItem} />
+            <Image source={{ uri: img }} style={imageCardItem} />
           </CardItem>
         </Card>
       </TouchableWithoutFeedback>
