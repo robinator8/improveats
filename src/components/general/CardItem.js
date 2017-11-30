@@ -1,22 +1,25 @@
 import React, { Component } from 'react';
 import { StyleSheet, Image, View } from 'react-native';
-import { CardItem, Left, Right, Body, Icon, Text, Button } from 'native-base';
+import { CardItem, Left, Right, Icon, Text, Button } from 'native-base';
 
 class MyCardItem extends Component {
   renderHeaderIcons(icons) {
-    icons.map(({ style, name, onPress, button, text }) => {
-      if (button) {
+    const { iconButtonStyle, iconStyle, iconTextStyle, iconViewStyle } = styles;
+
+    return icons.map(({ style, name, onPress, text }, index) => {
+      if (onPress) {
         return (
-          <Button transparent style={iconButtonStyle} onPress={onPress}>
+          <Button transparent style={iconButtonStyle} onPress={onPress} key={index}>
             <Icon
               name={name}
-              style={[nameCardItemRightIcon, style]}
+              style={[iconStyle, style]}
             />
           </Button>
         );
       }
+
       return (
-        <View>
+        <View style={iconViewStyle} key={index}>
           <Text style={iconTextStyle}>{text}</Text>
           <Icon
             name={name}
@@ -24,11 +27,12 @@ class MyCardItem extends Component {
           />
         </View>
       );
-    })
+    });
   }
 
-  renderHeader(title, icons) {
+  renderHeader({ title, icons }) {
     const { headerItemStyle, headerTextStyle, headerRightStyle } = styles;
+
     return (
       <CardItem style={headerItemStyle}>
         <Left>
@@ -42,11 +46,22 @@ class MyCardItem extends Component {
     );
   }
 
-  renderSubHeader() {
+  renderSubHeader({ leftText, rightText }) {
+    const { subHeaderItemStyle, subHeaderLeftTextStyle, subHeaderRightTextStyle } = styles;
 
+    return (
+      <CardItem style={subHeaderItemStyle}>
+        <Left>
+          <Text style={subHeaderLeftTextStyle}>{leftText}</Text>
+        </Left>
+        <Right>
+          <Text style={subHeaderRightTextStyle}>{rightText}</Text>
+        </Right>
+      </CardItem>
+    );
   }
 
-  renderImage(source) {
+  renderImage({ source }) {
     return (
       <CardItem cardBody>
         <Image source={source} style={styles.imageStyle} />
@@ -55,10 +70,14 @@ class MyCardItem extends Component {
   }
 
   render() {
-    const { header, subHeader, image, style, source, title, icons } = this.props;
-    if (header) return this.renderHeader(title, icons);
-    else if (subHeader) return this.renderSubHeader();
-    else if (image) return this.renderImage(source);
+    const { header, subHeader, image, style } = this.props;
+    if (header) {
+      return this.renderHeader(header);
+    } else if (subHeader) {
+      return this.renderSubHeader(subHeader);
+    } else if (image) {
+      return this.renderImage(image);
+    }
     return (
       <CardItem style={style}>
         {this.props.children}
@@ -73,7 +92,6 @@ const styles = StyleSheet.create({
     width: null,
     flex: 1
   },
-
   headerItemStyle: {
     backgroundColor: '#ae263d',
   },
@@ -97,6 +115,20 @@ const styles = StyleSheet.create({
     fontSize: 30,
     color: '#fff',
     paddingHorizontal: 5,
+  },
+  iconViewStyle: {
+    flexDirection: 'row',
+  },
+  subHeaderItemStyle: {
+    backgroundColor: '#2a2a2a',
+    height: 35,
+    flex: 1
+  },
+  subHeaderLeftTextStyle: {
+    color: '#22aeff',
+  },
+  subHeaderRightTextStyle: {
+    color: '#fff',
   },
 });
 

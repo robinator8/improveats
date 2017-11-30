@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Text } from 'native-base';
-import { CardList } from '../general';
-import { restaurantsFetch } from '../../actions/';
-import ListItem from './ListItem';
+import { CardList } from './general';
+import { restaurantsFetch, restaurantFetch } from '../actions/';
+import RestaurantCard from './RestaurantCard';
 
 class RestaurantList extends Component {
   componentWillMount() {
@@ -16,24 +16,41 @@ class RestaurantList extends Component {
     this.props.restaurantsFetch();
   }
 
+  onCardPress(restaurant) {
+    console.log('props', this.props, 'rest', restaurant);
+    this.props.restaurantFetch(restaurant);
+    this.props.navigation.navigate('RestaurantScreen');
+  }
+
+  onPinPress(restaurant) {
+
+  }
+
+  onFavorite(restaurant) {
+
+  }
+
   renderItem({ item }) {
     return (
-      <ListItem
+      <RestaurantCard
         restaurant={item}
-        navigation={this.props.navigation}
+        onCardPress={this.onCardPress.bind(this)}
+        onPinPress={this.onPinPress}
+        onFavorite={this.onFavorite}
       />
     );
   }
 
   renderList() {
-    if (this.props.error) {
+    const { error, restaurants, loading } = this.props;
+    if (error) {
       return <Text>Error</Text>;
     }
     return (
       <CardList
-        data={this.props.restaurants}
+        data={restaurants}
         renderItem={this.renderItem.bind(this)}
-        refreshing={this.props.loading}
+        refreshing={loading}
         onRefresh={this.onRefresh.bind(this)}
       />
     );
@@ -49,4 +66,4 @@ const mapStateToProps = ({ restaurant }) => {
   return { restaurants, error, loading };
 };
 
-export default connect(mapStateToProps, { restaurantsFetch })(RestaurantList);
+export default connect(mapStateToProps, { restaurantsFetch, restaurantFetch })(RestaurantList);

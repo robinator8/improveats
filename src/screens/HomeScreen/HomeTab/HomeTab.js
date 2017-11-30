@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Container } from 'native-base';
-import RestaurantList from '../../../components/RestaurantList/RestaurantList';
+import RestaurantList from '../../../components/RestaurantList';
 import Header from './Header';
 
 class HomeTab extends Component {

@@ -15,6 +15,9 @@ import { phonecall, email, } from 'react-native-communications';
 import { DRAWER_OPEN } from '../screens';
 import AboutItem from './AboutItem';
 
+const PHONE = '17807108472';
+const EMAIL = 'info@improveats.com';
+
 class AboutScreen extends Component {
   constructor() {
     super();
@@ -49,18 +52,19 @@ class AboutScreen extends Component {
           <Right>
             <Button
               transparent
-              onPress={() => phonecall('17807108472', true)}
+              onPress={() => phonecall(PHONE, true)}
             >
               <Icon name="md-call" />
             </Button>
             <Button
               transparent
-              onPress={() => email(['info@improveats.com'], null, null, null, null)}
+              onPress={() => email([EMAIL], null, null, null, null)}
             >
               <Icon name="md-mail" />
             </Button>
           </Right>
         </Header>
+
         <View style={{ flex: 1 }}>
           <FlatList
             data={this.props.data}
