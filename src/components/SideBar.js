@@ -14,7 +14,7 @@ import {
   LOGIN_SCREEN,
   ABOUT_SCREEN,
   CONTACT_SCREEN
-} from '../../screens/screens';
+} from '../screens/screens';
 
 const routes = [
   { name: 'HOME', key: HOME_SCREEN, icon: 'md-home' },
@@ -72,7 +72,7 @@ class SideBar extends Component {
         <Content style={content}>
           <View style={imageView}>
             <Image
-              source={require('../../resources/img/logo.png')}
+              source={require('../resources/img/logo.png')}
               style={image}
             />
           </View>

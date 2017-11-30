@@ -2,7 +2,7 @@ import React from 'react';
 import { DrawerNavigator } from 'react-navigation';
 import HomeScreen from '../HomeScreen';
 import LoginScreen from '../LoginScreen/LoginScreen';
-import SideBar from '../../components/SideBar/SideBar';
+import SideBar from '../../components/SideBar';
 import AboutScreen from '../AboutScreen/AboutScreen';
 import ContactScreen from '../ContactScreen/ContactScreen';
 
