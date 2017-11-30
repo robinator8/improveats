@@ -3,54 +3,40 @@ import { StyleSheet, Image, View } from 'react-native';
 import { CardItem, Left, Right, Body, Icon, Text, Button } from 'native-base';
 
 class MyCardItem extends Component {
+  renderHeaderIcons(icons) {
+    icons.map(({ style, name, onPress, button, text }) => {
+      if (button) {
+        return (
+          <Button transparent style={iconButtonStyle} onPress={onPress}>
+            <Icon
+              name={name}
+              style={[nameCardItemRightIcon, style]}
+            />
+          </Button>
+        );
+      }
+      return (
+        <View>
+          <Text style={iconTextStyle}>{text}</Text>
+          <Icon
+            name={name}
+            style={[iconStyle, style]}
+          />
+        </View>
+      );
+    })
+  }
+
   renderHeader(title, icons) {
+    const { headerItemStyle, headerTextStyle, headerRightStyle } = styles;
     return (
-      <CardItem style={nameCardItem}>
-        <Left style={nameCardItemLeft}>
-          <Text style={nameCardItemLeftText}>{title}</Text>
+      <CardItem style={headerItemStyle}>
+        <Left>
+          <Text style={headerTextStyle}>{title}</Text>
         </Left>
 
-        <Right style={nameCardItemRight}>
-          {
-            icons.map(({ style, name, onPress, button, text }) => {
-              if (button) {
-                return (
-                  <Button transparent style={nameCarditemRightButton}>
-                    <Icon
-                      name={name}
-                      style={[nameCardItemRightIcon, style]}
-                    />
-                  </Button>
-                );
-              }
-              return (
-                <View>
-                  <Text style={nameCardItemRightText}>{text}</Text>
-                  <Icon
-                    name={name}
-                    style={[nameCardItemRightIcon, style]}
-                  />
-                </View>
-              );
-            })
-          }
-          <Text style={nameCardItemRightText}>{rating}</Text>
-          <Icon
-            name='md-star'
-            style={[nameCardItemRightIcon, star]}
-          />
-          <Button transparent style={nameCarditemRightButton}>
-            <Icon
-              name='pin'
-              style={nameCardItemRightIcon}
-            />
-          </Button>
-          <Button transparent style={nameCarditemRightButton}>
-            <Icon
-              name={favorited ? 'md-heart' : 'md-heart-outline'}
-              style={nameCardItemRightIcon}
-            />
-          </Button>
+        <Right style={headerRightStyle}>
+          {this.renderHeaderIcons(icons)}
         </Right>
       </CardItem>
     );
@@ -86,6 +72,31 @@ const styles = StyleSheet.create({
     height: 200,
     width: null,
     flex: 1
+  },
+
+  headerItemStyle: {
+    backgroundColor: '#ae263d',
+  },
+  headerTextStyle: {
+    color: '#fff',
+    fontSize: 18,
+  },
+  headerRightStyle: {
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+    flexDirection: 'row',
+  },
+  iconTextStyle: {
+    fontSize: 20,
+    color: '#fff',
+  },
+  iconButtonStyle: {
+    alignItems: 'center',
+  },
+  iconStyle: {
+    fontSize: 30,
+    color: '#fff',
+    paddingHorizontal: 5,
   },
 });
 
