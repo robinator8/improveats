@@ -1,8 +1,8 @@
 {
   "expoServerPort": 19000,
   "packagerPort": 19001,
-  "packagerPid": 14980,
-  "expoServerNgrokUrl": "https://qm-vks.robinator8.improveats.exp.direct",
-  "packagerNgrokUrl": "https://packager.qm-vks.robinator8.improveats.exp.direct",
-  "ngrokPid": 19352
+  "packagerPid": 21828,
+  "expoServerNgrokUrl": null,
+  "packagerNgrokUrl": null,
+  "ngrokPid": null
 }
