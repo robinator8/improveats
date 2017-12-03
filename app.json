@@ -5,6 +5,11 @@
     "name": "improveats",
     "slug": "improveats",
     "sdkVersion": "23.0.0",
+    "packagerOpts": {
+      "assetExts": [
+        "ttf"
+      ]
+    },
     "androidStatusBar": {
       "barStyle": "light-content",
     }

@@ -1,7 +1,5 @@
 import Expo from 'expo';
 import React from 'react';
-import { Text, View } from 'react-native';
-import { Icon } from 'native-base';
 import App from './src/App';
 
 export default class App1 extends React.Component {
@@ -25,6 +23,6 @@ export default class App1 extends React.Component {
     if (!this.state.isReady) {
       return <Expo.AppLoading />;
     }
-    return <View><Icon name="md-call" /></View>;
+    return <App />;
   }
 }
