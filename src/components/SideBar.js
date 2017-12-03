@@ -9,6 +9,8 @@ import {
   Body,
   Icon,
 } from 'native-base';
+import { Ionicons } from '@expo/vector-icons';
+
 import {
   HOME_SCREEN,
   LOGIN_SCREEN,
@@ -50,7 +52,7 @@ class SideBar extends Component {
         onPress={() => this.props.navigation.navigate(key)}
       >
         <Left style={listItemLeft}>
-          <Icon name={icon} style={listItemIcon} />
+          <Ionicons name={icon} style={listItemIcon} />
         </Left>
         <Body style={listItemBody}>
           <Text style={listItemText}>{name}</Text>
