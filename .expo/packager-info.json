@@ -1,8 +1,8 @@
 {
-  "expoServerPort": 19000,
-  "packagerPort": 19001,
-  "packagerPid": 24412,
-  "expoServerNgrokUrl": "https://3f-fse.robinator8.improveats.exp.direct",
-  "packagerNgrokUrl": "https://packager.3f-fse.robinator8.improveats.exp.direct",
-  "ngrokPid": 23876
+  "expoServerPort": null,
+  "packagerPort": null,
+  "packagerPid": null,
+  "expoServerNgrokUrl": null,
+  "packagerNgrokUrl": null,
+  "ngrokPid": null
 }
