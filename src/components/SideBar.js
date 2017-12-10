@@ -9,7 +9,6 @@ import {
   Body,
   Icon,
 } from 'native-base';
-import { Ionicons } from '@expo/vector-icons';
 
 import {
   HOME_SCREEN,
@@ -52,7 +51,7 @@ class SideBar extends Component {
         onPress={() => this.props.navigation.navigate(key)}
       >
         <Left style={listItemLeft}>
-          <Ionicons name={icon} style={listItemIcon} />
+          <Icon name={icon} style={listItemIcon} />
         </Left>
         <Body style={listItemBody}>
           <Text style={listItemText}>{name}</Text>
@@ -145,55 +144,5 @@ const styles = StyleSheet.create({
     color: '#fff'
   },
 });
-
-// const stylesLight = StyleSheet.create({
-//   content: {
-//     backgroundColor: '#eee',
-//   },
-//   imageView: {
-//     justifyContent: 'center',
-//     alignItems: 'center',
-//     flexDirection: 'row',
-//     height: 79,
-//     backgroundColor: '#fff',
-//   },
-//   image: {
-//     resizeMode: 'contain',
-//     flex: 1,
-//   },
-//   list: {
-//     padding: 0,
-//     paddingLeft: 0,
-//   },
-//   listContent: {
-//     padding: 0,
-//     paddingLeft: 0,
-//   },
-//   listItem: {
-//     padding: 0,
-//     paddingLeft: 0,
-//     margin: 0,
-//     marginLeft: 0,
-//     height: 60,
-//     backgroundColor: '#e6e6e6',
-//     borderLeftWidth: 5,
-//     borderLeftColor: '#ae263d',
-//     borderBottomWidth: 2,
-//     borderBottomColor: '#eee',
-//     borderTopWidth: 2,
-//     borderTopColor: '#fff',
-//   },
-//   listItemLeft: {
-//     padding: 10,
-//   },
-//   listItemIcon: {
-//   },
-//   listItemBody: {
-//     borderBottomWidth: 0,
-//   },
-//   listItemText: {
-//     fontSize: 20,
-//   },
-// });
 
 export default SideBar;

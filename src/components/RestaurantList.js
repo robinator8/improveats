@@ -16,17 +16,17 @@ class RestaurantList extends Component {
     this.props.restaurantsFetch();
   }
 
-  onCardPress(restaurant) {
+  onCardPress = (restaurant) => {
     console.log('props', this.props, 'rest', restaurant);
     this.props.restaurantFetch(restaurant);
     this.props.navigation.navigate('RestaurantScreen');
   }
 
-  onPinPress(restaurant) {
+  onPinPress = (restaurant) => {
 
   }
 
-  onFavorite(restaurant) {
+  onFavorite = (restaurant) => {
 
   }
 
@@ -34,7 +34,7 @@ class RestaurantList extends Component {
     return (
       <RestaurantCard
         restaurant={item}
-        onCardPress={this.onCardPress.bind(this)}
+        onCardPress={this.onCardPress}
         onPinPress={this.onPinPress}
         onFavorite={this.onFavorite}
       />
