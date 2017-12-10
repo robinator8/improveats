@@ -4,6 +4,10 @@ export default (variables = variable) => {
 	const platform = variables.platform;
 
 	const cardItemTheme = {
+		'.test': {
+			backgroundColor: '#44f',
+		},
+
 		'NativeBase.Left': {
 			'NativeBase.Body': {
 				'NativeBase.Text': {

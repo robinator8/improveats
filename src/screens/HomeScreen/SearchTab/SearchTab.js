@@ -10,6 +10,7 @@ import {
   Body,
   Content,
   Text,
+  CardItem,
 } from 'native-base';
 import { DRAWER_OPEN } from '../../screens';
 
@@ -38,6 +39,9 @@ class SearchTab extends Component {
       <Container>
         <Content padder>
           <Text>Search Screen</Text>
+          <CardItem test>
+            <Text>Test</Text>
+          </CardItem>
         </Content>
       </Container>
     );
