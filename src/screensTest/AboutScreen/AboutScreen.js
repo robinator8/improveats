@@ -18,13 +18,6 @@ const PHONE = '17807108472';
 const EMAIL = 'info@improveats.com';
 
 class AboutScreen extends Component {
-  constructor() {
-    super();
-    this.state = {
-      activeFab: true
-    };
-  }
-
   componentWillUpdate() {
     LayoutAnimation.easeInEaseOut();
   }

@@ -6,7 +6,7 @@ import { StyleProvider } from 'native-base';
 import getTheme from '../native-base-theme/components';
 import commonColor from '../native-base-theme/variables/commonColor';
 import reducers from './reducers';
-import MainContainer from './screens/MainContainer';
+import Navigator from './screensTest/Navigator';
 
 class App extends Component {
   render() {
@@ -14,7 +14,7 @@ class App extends Component {
     return (
       <Provider store={store}>
         <StyleProvider style={getTheme(commonColor)}>
-          <MainContainer />
+          <Navigator />
         </StyleProvider>
       </Provider>
     );

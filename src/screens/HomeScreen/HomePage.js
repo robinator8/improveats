@@ -9,7 +9,6 @@ import {
 } from 'native-base';
 import HomeTab from './HomeTab/HomeTab';
 import SearchTab from './SearchTab/SearchTab';
-import { HOME_TAB, SEARCH_TAB } from '../screens';
 
 export default TabNavigator(
   {
@@ -26,7 +25,7 @@ export default TabNavigator(
             <Button
               vertical
               active={props.navigationState.index === 0}
-              onPress={() => props.navigation.navigate(HOME_TAB)}
+              onPress={() => props.navigation.navigate('HomeTab')}
             >
               <Icon name='md-home' />
               <Text>Home</Text>
@@ -34,7 +33,7 @@ export default TabNavigator(
             <Button
               vertical
               active={props.navigationState.index === 1}
-              onPress={() => props.navigation.navigate(SEARCH_TAB)}
+              onPress={() => props.navigation.navigate('SearchTab')}
             >
               <Icon name='md-search' />
               <Text>Search</Text>

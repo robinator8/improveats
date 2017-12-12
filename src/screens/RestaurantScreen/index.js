@@ -9,7 +9,6 @@ import {
 } from 'native-base';
 import ReserveTab from './ReserveTab';
 import InfoTab from './InfoTab';
-import { RESERVE_TAB, INFO_TAB } from '../screens';
 
 const RestaurantScreen = TabNavigator(
   {
@@ -27,7 +26,7 @@ const RestaurantScreen = TabNavigator(
             <Button
               vertical
               active={props.navigationState.index === 0}
-              onPress={() => props.navigation.navigate(RESERVE_TAB)}
+              onPress={() => props.navigation.navigate('ReserveTab')}
             >
               <Icon name='md-time' />
               <Text>Reserve</Text>
@@ -35,7 +34,7 @@ const RestaurantScreen = TabNavigator(
             <Button
               vertical
               active={props.navigationState.index === 1}
-              onPress={() => props.navigation.navigate(INFO_TAB)}
+              onPress={() => props.navigation.navigate('InfoTab')}
             >
               <Icon name='md-restaurant' />
               <Text>Info</Text>

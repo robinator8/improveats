@@ -10,18 +10,11 @@ import {
   Icon,
 } from 'native-base';
 
-import {
-  HOME_SCREEN,
-  LOGIN_SCREEN,
-  ABOUT_SCREEN,
-  CONTACT_SCREEN
-} from '../screens/screens';
-
 const routes = [
-  { name: 'HOME', key: HOME_SCREEN, icon: 'md-home' },
-  { name: 'LOGIN', key: LOGIN_SCREEN, icon: 'md-key' },
-  { name: 'ABOUT', key: ABOUT_SCREEN, icon: 'md-information-circle' },
-  { name: 'CONTACT', key: CONTACT_SCREEN, icon: 'md-megaphone' },
+  { name: 'HOME', key: 'Home', icon: 'md-home' },
+  { name: 'LOGIN', key: 'Login', icon: 'md-key' },
+  { name: 'ABOUT', key: 'About', icon: 'md-information-circle' },
+  { name: 'CONTACT', key: 'Contact', icon: 'md-megaphone' },
 ];
 
 class SideBar extends Component {
@@ -95,6 +88,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#111',
   },
   imageView: {
+    marginTop: 24,
     justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'row',

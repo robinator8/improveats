@@ -9,7 +9,7 @@ import {
   Button,
   Body,
 } from 'native-base';
-import { restaurantsFetch } from '../../../actions/';
+import { restaurantsFetch } from '../../actions/';
 
 const MyHeader = (props) => (
   <Header>
