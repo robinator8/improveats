@@ -1,14 +1,8 @@
 {
-<<<<<<< HEAD
-  "expoServerPort": null,
-  "packagerPort": null,
-  "packagerPid": null,
-=======
   "expoServerPort": 19000,
   "packagerPort": 19001,
-  "packagerPid": 6592,
->>>>>>> f6e70912541656fe775501b262440863b1ba356f
-  "expoServerNgrokUrl": null,
-  "packagerNgrokUrl": null,
-  "ngrokPid": null
+  "packagerPid": 19316,
+  "expoServerNgrokUrl": "https://ai-hjx.robinator8.improveats.exp.direct",
+  "packagerNgrokUrl": "https://packager.ai-hjx.robinator8.improveats.exp.direct",
+  "ngrokPid": 20052
 }

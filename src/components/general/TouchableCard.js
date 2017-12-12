@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, TouchableWithoutFeedback } from 'react-native';
 import { Card } from 'native-base';
 
-const MyCard = ({ children, onPress }) => (
+const TouchableCard = ({ children, onPress }) => (
   <TouchableWithoutFeedback onPress={onPress}>
     <Card style={styles.cardStyle}>
       {children}
@@ -16,4 +16,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export { MyCard as Card };
+export { TouchableCard };

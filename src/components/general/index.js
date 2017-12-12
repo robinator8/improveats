@@ -1,4 +1,3 @@
-export * from './Card';
-export * from './CardItem';
+export * from './TouchableCard';
 export * from './CardList';
 export * from './Rating';

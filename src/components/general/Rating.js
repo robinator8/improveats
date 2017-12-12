@@ -48,4 +48,4 @@ class Rating extends Component {
   }
 }
 
-export default { Rating };
+export { Rating };

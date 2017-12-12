@@ -1,11 +1,9 @@
 import variable from './../variables/platform';
-import customStyle from '../custom/CardItem';
 
 export default (variables = variable) => {
 	const platform = variables.platform;
-
 	const cardItemTheme = {
-		...customStyle,
+		// My Styling
 		'.header': {
 			'NativeBase.Left': {
 				'NativeBase.Text': {
@@ -15,10 +13,12 @@ export default (variables = variable) => {
 			},
 			'NativeBase.Right': {
 				'NativeBase.Button': {
-					'NativeBase.Icon': {
-						fontSize: 30,
-						color: '#fff',
-						paddingHorizontal: 5,
+					'.transparent': {
+						'NativeBase.Icon': {
+							fontSize: 30,
+							color: '#fff',
+							paddingHorizontal: 5,
+						},
 					},
 					alignItems: 'center',
 				},
@@ -30,6 +30,10 @@ export default (variables = variable) => {
 					fontSize: 30,
 					color: '#fff',
 					paddingHorizontal: 5,
+				},
+				'NativeBase.Text': {
+					fontSize: 20,
+					color: '#fff',
 				},
 				justifyContent: 'flex-end',
 				alignItems: 'center',
@@ -47,10 +51,31 @@ export default (variables = variable) => {
 				borderBottomWidth: platform === 'ios' ? variables.borderWidth : null,
 			},
 			borderBottomWidth: null,
-			paddingVertical: variables.listItemPadding -5,
-			backgroundColor: '#ae263d',
+			paddingVertical: variables.listItemPadding - 5,
+			backgroundColor: variables.brandPrimary,
 		},
 
+		'.subHeader': {
+			'NativeBase.Left': {
+				'NativeBase.Text': {
+					color: '#22aeff',
+				},
+			},
+			'NativeBase.Right': {
+				'NativeBase.Text': {
+					color: '#fff',
+				},
+			},
+			backgroundColor: '#2a2a2a',
+			paddingVertical: variables.listItemPadding - 2,
+			flex: 1
+		},
+
+		'.image': {
+			padding: -5,
+		},
+
+		// Default Styling
 		'NativeBase.Left': {
 			'NativeBase.Body': {
 				'NativeBase.Text': {
@@ -199,6 +224,22 @@ export default (variables = variable) => {
 			},
 			flex: 0.8,
 		},
+		// Original header
+		// '.header': {
+		// 	'NativeBase.Text': {
+		// 		fontSize: 16,
+		// 		fontWeight: platform === 'ios' ? '500' : undefined,
+		// 	},
+		// 	'.bordered': {
+		// 		'NativeBase.Text': {
+		// 			color: variables.sTabBarActiveTextColor,
+		// 			fontWeight: platform === 'ios' ? '500' : undefined,
+		// 		},
+		// 		borderBottomWidth: platform === 'ios' ? variables.borderWidth : null,
+		// 	},
+		// 	borderBottomWidth: null,
+		// 	paddingVertical: variables.listItemPadding + 5,
+		// },
 		'.footer': {
 			'NativeBase.Text': {
 				fontSize: 16,
