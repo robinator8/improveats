@@ -1,6 +1,6 @@
 import React from 'react';
 import { DrawerNavigator, StackNavigator, TabNavigator } from 'react-navigation';
-import { Footer, FooterTab, Icon, Text, Button, } from 'native-base';
+import { restaurantOptions, restaurantHeader, homeOptions } from './NavigatorOptions';
 import SideBar from './../components/SideBar';
 import HomeScreen from './HomeScreen/HomeScreen';
 import LoginScreen from './LoginScreen/LoginScreen';
@@ -17,40 +17,14 @@ const Navigator = DrawerNavigator({
         screen: TabNavigator({
           Home: { screen: HomeScreen },
           Search: { screen: SearchScreen },
-        })
+        }, homeOptions)
       },
       Restaurant: {
         screen: TabNavigator({
           Reserve: { screen: ReserveScreen },
           Info: { screen: InfoScreen },
-        }, {
-          swipeEnabled: true,
-          lazy: false,
-          backBehavior: 'none',
-          tabBarPosition: 'bottom',
-          tabBarComponent: props => (
-              <Footer>
-                <FooterTab>
-                  <Button
-                    vertical
-                    active={props.navigationState.index === 0}
-                    onPress={() => props.navigation.navigate('Reserve')}
-                  >
-                    <Icon name='time' />
-                    <Text>Reserve</Text>
-                  </Button>
-                  <Button
-                    vertical
-                    active={props.navigationState.index === 1}
-                    onPress={() => props.navigation.navigate('Info')}
-                  >
-                    <Icon name='restaurant' />
-                    <Text>Info</Text>
-                  </Button>
-                </FooterTab>
-              </Footer>
-            )
-          }),
+        }, restaurantOptions),
+        ...restaurantHeader,
       },
     })
   },

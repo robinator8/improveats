@@ -11,10 +11,10 @@ import {
 } from 'native-base';
 
 const routes = [
-  { name: 'HOME', key: 'Home', icon: 'md-home' },
-  { name: 'LOGIN', key: 'Login', icon: 'md-key' },
-  { name: 'ABOUT', key: 'About', icon: 'md-information-circle' },
-  { name: 'CONTACT', key: 'Contact', icon: 'md-megaphone' },
+  { name: 'HOME', key: 'Home', icon: 'home' },
+  { name: 'LOGIN', key: 'Login', icon: 'key' },
+  { name: 'ABOUT', key: 'About', icon: 'information-circle' },
+  { name: 'CONTACT', key: 'Contact', icon: 'megaphone' },
 ];
 
 class SideBar extends Component {
