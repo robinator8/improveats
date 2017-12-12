@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Image } from 'react-native';
 import {
   Container,
   Header,
@@ -37,6 +38,7 @@ class SearchTab extends Component {
       <Container>
         <Content padder>
           <Text>Search Screen</Text>
+          <Image source={{ uri: 'http://dummyimage.com/207x235.jpg/ff4444/ffffff' }}style={{ flex: 1, height: 40, width: null, }} />
         </Content>
       </Container>
     );

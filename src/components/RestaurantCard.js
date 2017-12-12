@@ -7,7 +7,7 @@ class RestaurantCard extends Component {
   render() {
     const { onPinPress, onFavorite, onCardPress, restaurant } = this.props;
     const { name, cuisines, time, img, favorited, rating } = restaurant;
-
+    console.log(img);
     return (
       <TouchableCard onPress={() => onCardPress(restaurant)}>
 
@@ -37,7 +37,7 @@ class RestaurantCard extends Component {
         </CardItem>
 
         <CardItem image>
-          <Image source={{ uri: img, }} style={{ flex: 1, }} style={styles.imageStyle} />
+          <Image source={{ uri: img, }} style={styles.imageStyle} />
         </CardItem>
 
       </TouchableCard>

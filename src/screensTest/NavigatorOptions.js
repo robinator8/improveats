@@ -67,7 +67,7 @@ export const restaurantHeader = {
             </Button>
             <Button transparent>
               <Icon
-                name={favorited ? 'md-heart' : 'md-heart-outline'}
+                name={navigation.state.params.favorited ? 'md-heart' : 'md-heart-outline'}
               />
             </Button>
           </Right>

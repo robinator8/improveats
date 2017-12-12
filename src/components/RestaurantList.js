@@ -17,9 +17,8 @@ class RestaurantList extends Component {
   }
 
   onCardPress = (restaurant) => {
-    console.log('props', this.props, 'rest', restaurant);
     this.props.restaurantFetch(restaurant);
-    this.props.navigation.navigate('Restaurant');
+    this.props.navigation.navigate('Restaurant', { favorited: restaurant.favorited });
   }
 
   onPinPress = (restaurant) => {
